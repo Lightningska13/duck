@@ -1,0 +1,8 @@
+<div id="mainContent">
+	<h1> Available Pages </h1>
+		<%= link_to 'New Page', new_page_path, :class => 'admin' if admin? %>
+		<% @grouped.each do |parent, pages| %>  
+ 			<h2><%= parent.upcase %></h2>  
+		<%= render :partial => 'page_list', :locals => {:pages => pages, :parent => parent} %>
+		<% end %>
+</div>

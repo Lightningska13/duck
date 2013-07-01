@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category:</b>
+  <%= @rescat.category %>
+</p>
+
+<p>
+  <b>Blurb:</b>
+  <%= @rescat.blurb %>
+</p>
+
+
+<%= link_to 'Edit', edit_rescat_path(@rescat) %> |
+<%= link_to 'Back', rescats_path %>

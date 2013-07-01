@@ -1,0 +1,40 @@
+<dl id="pages_<%= parent %>" class="resourceList">
+	<% pages.each do |page| %> 
+	<div  id="page_<%= page.id %>">
+		<dt class="page" id="item_<%= page.id %>"><%= link_to page.title, get_path(page.parent, page.id) %></dt>
+			<dd>Page Group: <%= page.parent %></dd>
+			<dd>Published: <%= page.published %></dd>
+		<% if admin? %>
+			<dd><span class="handle" style="<%= @cursor_style %>">DRAG</span> <%= link_to	'Edit', edit_page_path(page), :class => 'admin' %>  
+			<%= link_to 'Delete', page, :confirm => 'Are you sure?', :method => :delete, :class => 'admin' %></dd>
+		<% end %>
+	</div>
+	<% end %>
+</dl>
+<% content_for :javascript  do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+
+    $(document).ready(function(){
+      $('#pages_<%= parent %>').sortable({
+        axis: 'y',
+        dropOnEmpty: false,
+        handle: '.handle',
+        cursor: 'crosshair',
+        items: 'div',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+            type: 'post',
+            data: $('#pages_<%= parent %>').sortable('serialize'),
+            dataType: 'script',
+            complete: function(request){
+              $('#pages_<%= parent %>').effect('highlight');
+              },
+            url: '/pages/sort'})
+          }
+        });
+      });
+  <% end %>
+<% end %>

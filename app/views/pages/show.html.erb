@@ -1,0 +1,19 @@
+<% content_for :leftCol do %>
+	<%= render "/pages/page_nav" %>
+<% end %>
+<div id="mainContent">
+	<div><% if @page.pagepic_file_name %><%= image_tag @page.pagepic.url(:large), :class=>"imageshadow main rounded"  %></div><br />
+	<% end %>
+<h1><%= @page.title %></h1>
+	<p>
+	<% if @page.description.any? %>
+		<%== @page.description %>
+	<% end %>
+	</p>
+<br clear="both" />
+<% if admin? %>
+	<p><b>Page Group:</b> <%= @page.parent %></p>
+<%= link_to 'Edit', edit_page_path(@page), :class => 'admin' %> 
+<%= link_to 'Back', pages_path, :class => 'admin' %>
+<% end %>
+</div><!-- end mainContent -->

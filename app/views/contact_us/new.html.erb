@@ -1,0 +1,28 @@
+<div id="mainContent">
+<h1>Contact Us</h1>
+<p>Please fill out the form below to contact our staff:</p>
+<%= form_for(:contact_us, :url => contact_us_url, :html => { :class => 'contact' }) do |f| %>
+  <fieldset style="width: 350px;">
+  <div class="input_block" style="float:left; width:200px; clear:left;">
+	<%= f.label :name %>
+    <%= f.text_field :name, :size=>"40" %>
+  </div>
+  <div class="input_block" style="float:left; width:200px; clear:left;">
+	<br />
+	<%= f.label :email %>
+    <%= f.text_field :email, :size=>"40" %>
+  </div>
+  </fieldset>
+  <fieldset style="width: 350px;">
+	<div class="input_block">
+	<%= f.label :message %>
+    <%= f.text_area :message, :rows => "7", :cols=>"40"%>
+  </div>
+  </fieldset>
+	<br />
+	<div class="submit">
+  <%= f.submit 'Submit' %>
+	</div>
+<% end %>
+	<iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=duck+lake+country+club&amp;oe=utf-8&amp;client=firefox-a&amp;ie=UTF8&amp;hq=duck+lake+country+club&amp;hnear=Marshall,+Calhoun,+Michigan&amp;ll=42.383766,-84.78065&amp;spn=0.245304,0.401863&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=duck+lake+country+club&amp;oe=utf-8&amp;client=firefox-a&amp;ie=UTF8&amp;hq=duck+lake+country+club&amp;hnear=Marshall,+Calhoun,+Michigan&amp;ll=42.383766,-84.78065&amp;spn=0.245304,0.401863&amp;t=m&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Duck</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="wrapper">
+	<div id="banner">
+	</div>
+	<div id="login">
+		<%= link_to 'Record Score', 'http://web3.golfsoftware.net/10392/', :target => '_blank'%>
+		<%= link_to '#1 Live View', 'http://dlcc.dyndns.org:10000/view/viewer_index.shtml?id=12', :target => '_blank' %><br />
+	<h1>Online Clubhouse</h1>
+	<p style="clear:both; font-size:small; font-style:italic;">Members: Enter your login and password below</p>
+	<p id="notice"><%= notice %></p>
+		<% if current_user %>
+		<%= current_user.name %>(<%= current_user.admin_level %>) logged in <br />
+		<%= link_to 'Logout', logout_path %>
+		<% else %>
+		<%= form_for(@user_session) do |f| %>
+	  		<%= f.label :login %>
+	  		<%= f.text_field :login, :autofocus => 'autofocus' %>
+	  		<%= f.label :password %>
+	  		<%= f.password_field :password %>
+	  		<%= f.submit "Login" %>
+		<% end %>
+		<% end %>
+	</div>
+<nav id="mainNav">
+<%= render "/layouts/main_nav" %>
+<%= render "/layouts/admin_nav" %>
+</nav>
+<div id="leftCol">
+	<% unless @current_controller == 'dash' %>
+	<%= content_for?(:leftCol) ? yield(:leftCol) : render("/layouts/boilerplate") %>
+	<% end %>
+</div>
+<%= yield %>
+<div id="footer">
+	Duck Lake Country Club<br />
+	2827 Country Club Way, Albion MI 49224<br />
+	(517) 629-9015
+</div>
+</div><!-- end wrapper -->
+<%= yield(:javascript) %>
+</body>
+</html>

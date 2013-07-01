@@ -1,0 +1,26 @@
+<div id="mainContent">
+	<p style="margin-top: 30px"><%= link_to "News", events_path(:t=>'News') %> | 
+	<%= link_to "Events", events_path %> 
+	</p>
+  <h1><%=h @event.title %></h1>
+	  <p style="margin-top: -15px; font-style: italic;"><%= @event.blurb %></p>
+<p class="list_date" style="margin-top: 15px;">
+  <%=h @event.start_date.strftime("%A %B %e, %Y") %>  <%=h  " - " + @event.end_date.strftime("%A %B %e, %Y") if @event.end_date != @event.start_date %>
+</p>
+<div class="description" style="margin-top: 30px;">
+  <%== @event.description %>
+</div>
+
+<% if @event.url.any? %>
+<p class="instructions">
+  <b>For more information:</b>
+  <%= link_to @event.url, @event.url %>
+</p>
+<% end %>
+	<span class="list_date">
+<% if admin? %>
+<br />
+<%= link_to 'Edit', edit_event_path(@event), :class=>'admin' %> 
+<%= link_to 'Back', events_path(:t=>@event.event_type), :class=>'admin' %>
+<% end %>
+</div>

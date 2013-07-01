@@ -1,0 +1,2 @@
+module ResCatsHelper
+end

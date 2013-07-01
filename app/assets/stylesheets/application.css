@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *  #002157
+ *= require_self
+ *= require_tree .
+ */
+body {
+	margin: 0;
+	padding: 0;
+	background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #345343 100%);
+	background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #345343 100%);
+	background-image: -o-linear-gradient(top left, #FFFFFF 0%, #345343 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #345343));
+	background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #345343 100%); 
+	font:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #271808;
+}
+a {
+	color: #271808;
+}
+#wrapper {
+	margin: auto;
+	margin-top: 20px;
+	width: 1000px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	box-shadow: 5px 5px 5px #333333;
+	background: #ffffff;
+}
+#banner {
+	width: 700px;
+	height: 150px;
+	float: left;
+	background: url('/assets/bannerdlcc.gif');
+}
+/*TOP CORNER LOGIN*/
+#login {
+	background: #9e8f7f;
+	width: 300px;
+	height: 150px;
+	float: left;
+}
+#login h1 {
+	font-size: medium;
+	float: left;
+}
+#login a {
+	float: right;
+	padding-right: 10px;
+}
+#login p {
+	margin-top: -10px;
+}
+#new_user_session {
+	font-size: small;
+	float: left;
+}
+#user_session_login {
+	width: 70px;
+	box-shadow: 0px 0px 1px 1px;
+}
+#user_session_password {
+	width: 70px;
+	box-shadow: 0px 0px 1px 1px;
+}
+#notice {
+	clear: both;
+}
+/*END TOP CORNER LOGIN*/
+#mainNav {
+	float: left;
+	width: 1000px;
+	height: 40px;
+	margin-top: 10px;
+	font-size: 20px;
+	text-align: center;
+}
+#mainNav a {
+	text-decoration: none;
+	color: #002157;
+}
+#mainContent {
+	float: left;
+	width: 825px;
+	padding-right: 10px;
+}
+#mainContent h1 {
+	color: #002157;
+	font-size: x-large;
+	padding-left: 10px;
+}
+#mainContent h2 {
+	padding-left: 10px;
+}
+#mainContent p {
+	font-size: 14px;
+	padding-left: 10px;
+}
+#mainContent img {
+}
+#mainContent td {
+	padding-left: 15px;
+}
+#mainContent td.Event span {
+	font-size: x-small;
+}
+#mainContent dl {
+	padding-left: 10px;
+}
+h2.title {
+	margin-top: -40px;
+}
+#pageNav {
+	float: left;
+	font-size: 16px;
+	width: 150px;
+	min-height: 500px;
+	max-height: none;
+	background: #9e8f7f;
+	padding-left: 5px;
+	padding-top: 10px;
+}
+#pageNav a {
+	text-decoration: underline;
+	color: #002157;
+}
+#pageNav h2 {
+	color: #002157;
+	text-decoration: underline;
+	margin-top: 0px;
+}
+a.admin {
+	padding-left: 10px;
+}
+#footer {
+	width: 1000px;
+	font: #002157;
+	background: #9e8f7f;
+	font-size: x-small;
+	text-align: center;
+	padding-bottom: 15px;
+	padding-top: 10px;
+	clear: both;
+}
+/*CONTACT US*/
+form.contact {
+	float: left;
+	width: 400px;
+}
+/*Resource List & Categories */
+#resourceCats {
+	float: right;
+	width: 300px;
+}
+p.instructions {
+	font-size: small;
+	padding-top: 5px;
+}
+.atBlurb {
+	font-size: small;
+	padding-left: 5px;
+}
+/*Events*/
+span.instructions {
+	font-style:italic;
+	font-size: small;
+}
+/*Dash Page*/
+#dashLeft {
+	width: 200px;
+	background: #a89a8c;
+	float: left;
+	margin-top: 40px;
+}
+#dashLeft h1 {
+	color: #002157;
+	padding-left: 10px;
+	text-decoration: underline;
+}
+#dashMiddle {
+	float: left;
+	width: 600px;
+	margin-top: 30px;
+	padding-left: 15px;
+}
+.eventItem {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.eventItem a {
+	text-decoration: none;
+}
+.eventBlurb {
+	font-size: small;
+}

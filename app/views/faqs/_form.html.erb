@@ -1,0 +1,34 @@
+<%= form_for(@faq) do |f| %>
+  <% if @faq.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@faq.errors.count, "error") %> prohibited this faq from being saved:</h2>
+
+      <ul>
+      <% @faq.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<% if false %>
+#remove if statement when using categories
+<section id="subContent">
+<% end %>
+  <div class="field">
+    <%= f.label :question %><br />
+    <%= f.text_field :question, :size=>80 %>
+  </div><br />
+  <div class="field">
+    <%= f.label :answer %><br />
+   	<%= f.cktext_area :answer, :toolbar=>'Basic', :width=>'500px', :height=>'200px' %>
+  </div><br />
+  <div class="field">
+    <%= f.check_box :featured %>
+	<%= f.label :featured, "Featured on Home Page" %>
+  </div><br />
+  <div class="actions">
+    <%= f.submit %>
+  </div><br />
+<% end %>
+</section>

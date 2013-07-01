@@ -1,0 +1,8 @@
+<% if @nav.presence && @nav.size>1 %>
+<nav id="pageNav">
+	<h2><%= @page_title %></h2>
+	<% @nav.each do |nav| %>
+		<p><%=facet_link(nav.title,:controller => @current_controller, :action => 'show', :id=>nav.id)%></p>
+	<% end %>
+</nav>
+<%end%>

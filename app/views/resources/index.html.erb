@@ -1,0 +1,44 @@
+<div id="mainContent">
+	<h1>Available Resources</h1>
+		<% if admin? %>
+			<%= link_to 'New Resource', new_resource_path, :class => 'admin' %> 
+			<%= link_to 'Categories', rescats_path, :class => 'admin' %><br /><br />
+		<% end %>
+	<div id="resourceCats">
+		<h2 class="title">Resource Categories</h2>
+			<p><span class="instructions">Click to Browse by Category</span></p>
+				<ul>
+					<% @rescats.each do |cat| %>
+					<% unless cat.resources.empty? %>
+				<li><%= link_to cat.category, :action=>:index, :controller=>:resources, :cat=>cat %></li>
+					<% end %>
+					<% end %>
+				</ul>
+				<% if member? %>
+					<ul>
+					<% @restricted.each do |cat| %>
+						<% unless cat.resources.empty? %>
+						<li><%= link_to cat.category, :action=>:index, :controller=>:resources, :cat=>cat %> <%= check_restricted(cat.restricted) %></li>
+						<% end %>
+					<% end %>
+				<% else %>
+				<p style="font:medium; font-style:italic; color:red;">You must be logged in to access The Divot newsletter</p>
+					</ul>			
+				<% end %>
+			<p><%= link_to 'View Uncategorized', {:action=>:index, :controller=>:resources, :all=>1},:class => 'admin' if admin? %></p>
+	</div>
+			<%= form_tag resources_path, :method => 'get' do %>
+		  		<p>
+				<br />
+		    	<label class="instructions"> Keyword Search</label><br />
+		    	<%= text_field_tag :search, params[:search] %>
+		    	<%= submit_tag "Search", :name => nil %>
+		  		</p>
+			<% end %>
+			<p class="instructions">Enter a search term, such as <tt><big>wedding</biG></tt> or <tt><big>schedule</biG></tt>
+			</p>
+		<h2 class="deptDivider"><%= @title_text %></h2>
+		<p class="atBlurb"><%== @blurb %></p>
+		 <%= render :partial => "resource_list" %>
+</div>
+

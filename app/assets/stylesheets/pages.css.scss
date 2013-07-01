@@ -1,0 +1,23 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contentBox {
+	padding:5px 20px 20px 20px;
+	background:#eee;
+	background:#E9DEAD;
+	margin:auto;
+	margin-bottom:20px;
+	
+}
+.left {
+	float:left;
+}
+.right{
+	float:right;
+	
+}
+.pageBox {
+	width:900px;
+	line-height:1.4em;
+}

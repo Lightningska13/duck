@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div id="subContent" class="sidebar" style="margin-top:0;">
+	<% if admin? %>
+		<%= link_to :back, :back, :class => 'foot sidebar' %>
+	<% end %>
+<br />
+</div>
+<div id="leftBox">
+<h1>Frequently Asked Questions</h1>
+<h2 class="deptDivider"><%= @title %></h2>
+<div class="question"><%=h @faq.question %></div><br />
+<div class="answer"><%= raw(@faq.answer) %></div><br />
+<%if admin? %>
+	<p>Featured on Homepage:<br />
+		<b> <%= @faq.featured %></b></p>
+<% end %>
+<span class="list_date">Posted: <%= @faq.updated_at.strftime("%m-%d-%Y")  %> </span>
+	<p><% if admin? %>
+		<%= link_to 'Edit', edit_faq_path(@faq), :class=>'admin' %> 
+		<%= link_to 'FAQ List', faqs_path, :class=>'admin' %>
+	<% end %></p>
+
+</div>

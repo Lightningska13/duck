@@ -1,0 +1,22 @@
+<div id="mainContent">
+		<h1><%= @eventHeader %></h1><br />
+			<p><%= link_to "News", events_path(:t=>'News') %> | <%= link_to "Events", events_path %> |</p><br />
+<p>This is a list of events for the country club</p>
+<% if admin? %>
+<%= link_to 'New Event', new_event_path, :class => 'admin' %>
+<% end %>
+<% @event_months.each do |month, events| %>  
+ <h2 class="deptDivider"><%= month.strftime("%B %Y") %></h2>  
+   <dl>
+   <% events.each do |event| %>  
+    <dt <%="class='#{event.event_type}'"-%> style="margin-top:8px;"><%= link_to event.title, event %> -  <span style="font-size:small; font-style:italic;"><%= event.start_date.to_date.to_s(:long) %></span></dt>
+    <div class="eventBlurb"><%= event.blurb %></div>
+      <% if admin? %>
+				<dd><%= link_to	'Edit', edit_event_path(event), :class => 'admin' %>  
+				<%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
+				</dd>
+			<% end %>
+  <% end %>  
+  </dl>
+<% end %>
+</div>

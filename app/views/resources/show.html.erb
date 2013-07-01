@@ -1,0 +1,33 @@
+<div id="subContent" class="sidebar">
+<p><%= link_to :back, :back %></p>
+</div>
+
+<div id="mainContent">
+
+<h1 class="serviceTitle">  <%=h @resource.title %></h1>
+<div class="description">
+  <%== @resource.description %>
+</div>
+
+<% if admin? %>
+	<dl class="resourceList">
+		<% if @resource.resource_type == 'Document' %>
+			<dt class="<%= get_icon(@resource.res_content_type) %>"><%= link_to @resource.title, @resource.res.url, :title => "Download #{@resource.res_file_name}", :target => '_blank' %> <span class="list_date">~<%= @resource.res_file_size/1000 %> KB</span></dt>
+			<% if @resource.description.size %><dd><%== @resource.description %></dd><% end %>
+		<% elsif @resource.resource_type == 'Link' %>
+			<dt class="link" id="item_<%= @resource.id %>"><%= link_to @resource.title, format_url(@resource.res_file_name), :target => '_blank' %></dt>
+			<% if @resource.description.size %><dd><%== @resource.description %></dd><% end %>
+		<% end %>
+	</dl>
+
+	<p>
+		<b>Featured:</b>
+		<%=h @resource.featured %>
+	</p>
+
+
+
+	<%= link_to 'Edit', edit_resource_path(@resource), :class=>'admin' %> |
+	<%= link_to 'Back', resources_path, :class=>'admin' %>
+<% end %>
+</div>

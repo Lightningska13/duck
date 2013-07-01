@@ -1,0 +1,38 @@
+<%= form_for(@page) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :parent, 'Page Group' %><br />
+    <%= f.select(:parent, ['about','membership','wedding']) %><br />
+  </div><br />
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :autofocus => 'autofocus' %>
+  </div><br />
+  <div class="field">
+    	<% if @showpic %>
+		<%= image_tag @page.pagepic.url(:medium), :class => 'imageshadow' %> <br />
+		<label class="instructions"><input type="checkbox" name="delete_image" value="1" /> Check to remove image</label>
+    	<br />
+		<% end %>
+      <%= f.label :pagepic, "Main Image" %>  
+      <%= f.file_field :pagepic %>  
+ </div><br />
+  <div class="field">
+    <%= f.label :description %><br />
+    	<%= f.cktext_area :description, :ckeditor => {:toolbar => 'Basic', :width => '700px'} %>
+  </div><br />
+  <div class="actions">
+    <%= f.submit %>
+  </div><br />
+<% end %>

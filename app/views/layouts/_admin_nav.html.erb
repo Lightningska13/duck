@@ -1,0 +1,12 @@
+<% if member? %>
+	<div class="mainNav">
+		<% if admin? %>
+		Admin Nav:
+		<%=section_link('Pages',:controller => 'pages', :action => 'index')%> |
+		<%=section_link('Resources',:controller => 'resources', :action => 'index')%> |
+		<%=section_link('Categories',:controller => 'rescats', :action => 'index')%> |
+		<%=section_link('Events',:controller => 'events', :action => 'index')%> |
+		<%=section_link('Users',:controller => 'users', :action => 'index') %>	
+		<% end %>
+	</div>
+<% end %>

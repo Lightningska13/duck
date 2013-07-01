@@ -1,0 +1,31 @@
+<section id="leftBox">
+<h1>Frequently Asked Questions</h1>
+
+<% if admin? %>
+	<%= link_to 'New FAQ', new_faq_path, :class => 'admin' %> 
+<% end %>
+
+ 	<div>
+		<%= form_tag faqs_path, :method => 'get' do %>
+	  <p>
+	    <label class="instructions"> Keyword Search</label><br />
+	    <%= text_field_tag :search, params[:search] %>
+	    <%= submit_tag "Search", :name => nil %>
+	  </p>
+		<% end %>
+		<p class="instructions">Enter a search term, such as <tt><big>billing</big></tt> or <tt><big>appointment</big></tt>
+		</p>
+	</div>
+	
+	<h2 class="deptDivider"><%= @title_text %></h2>
+	<div class="instructions"><%= @blurb %> </div>
+ 		<%= render :partial=>"faq_list" %>
+		
+</section>
+<section id="rightBox">
+	<h1>What is HIPAA?</h1>
+		<p>The Health Insurance Portability and Accountability Act (HIPAA) requires that as of April 14, 2003, each patient be given the opportunity to read and/or keep a copy of the practice's Notices of Privacy Practices (which is available in our office for your review).</p>
+	<h1>Is Dr. Byrens currently accepting new patients?</h1>
+		<p>Unfortunately, having a practice with too many patients can cause scheduling, communication, and other difficulties that can quickly lead to a breakdown in patient care. Because of this, we are not accepting any new patients at this time. We would be happy to place you on our waiting list and inform you of any new openings as they arise.</p>
+</section>
+
