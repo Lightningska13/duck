@@ -18,14 +18,14 @@ test:
   pool: 5
   timeout: 5000
 
-  production:
-    adapter: postgresql
-    encoding: unicode
-    database: duck_production
-    template: template0
-    pool: 5
-    username: duck
-    password: duck441
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: duck_production
+  template: template0
+  pool: 5
+  username: duck
+  password: duck441
     
 # production:
 #     adapter: sqlite3
