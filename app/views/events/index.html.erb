@@ -1,7 +1,6 @@
 <div id="mainContent">
-		<h1><%= @eventHeader %></h1><br />
-			<p><%= link_to "News", events_path(:t=>'News') %> | <%= link_to "Events", events_path %> |</p><br />
-<p>This is a list of events for the country club</p>
+		<h1><%= @eventHeader %></h1>
+			<p>| <%= link_to "News", events_path(:t=>'News') %> | <%= link_to "Events", events_path %> |</p>
 <% if admin? %>
 <%= link_to 'New Event', new_event_path, :class => 'admin' %>
 <% end %>

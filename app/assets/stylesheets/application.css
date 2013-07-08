@@ -14,12 +14,8 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #345343 100%);
-	background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #345343 100%);
-	background-image: -o-linear-gradient(top left, #FFFFFF 0%, #345343 100%);
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #345343));
-	background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #345343 100%); 
-	font:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	background: #345343;
+	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	color: #271808;
 }
 a {
@@ -86,6 +82,9 @@ a {
 #mainNav a {
 	text-decoration: none;
 	color: #002157;
+}
+.adminNav {
+	font-size: 12px;
 }
 #mainContent {
 	float: left;
