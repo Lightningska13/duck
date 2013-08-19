@@ -1,6 +1,5 @@
-<div id="mainContent">
+<div id="dashContent">
 <div id="sliderFrame">
-    <div id="ribbon"></div>
     <div id="slider">
         <img src="/assets/golf1.gif" />
         <img src="/assets/golf2.gif" />
@@ -8,9 +7,10 @@
         <img src="/assets/golf4.gif" />
         <img src="/assets/golf5.gif" />
     </div>
+</div><br />
 </div>
 <div id="dashLeft">
-	<h1>Event Calendar</h1>
+	<h1>Calendar</h1>
 		<% @events.each do |event| %>
 		<div class="eventItem <%= cycle('odd','even') %>">
 			<%= link_to event_path(event) do %>
@@ -22,10 +22,9 @@
 		<% end %>
 	<div style="padding-left:10px; font-size:small; padding-bottom: 10px;"><%= link_to "View All Events...", events_path, :class=>'foot' %></div>
 </div>
-<div id="dashMiddle">
-<h1>Welcome to Duck Lake Country Club</h1>
+<div id="mainContent2">
+<h1>Welcome to Duck Lake Country Club!</h1>
 <p>Established in 1922, Duck Lake Country Club enjoys a rich history of golf in the heart of Michigan. Settled next to beautiful Duck Lake in southern Michigan, Duck Lake Country Club combines a winning tradition of challenging golf, social membership, and pride.</p>
 <p>Designed with influences from Scotland and 1900s America, Duck Lake Country Club's inspired 18 hole course provides the backdrop to a beautiful dining facility. By delivering superior services, amenities, and playing surfaces Duck Lake Country Club is the exclusive club to join in southern Michigan.</p>
-<p>We continually strive to provide a superior golf and social experience to members and guests of all ages, whether you are looking for a fun and challenging golf course or the perfect special event facility.</p>
-</div>
+<p>We continually strive to provide a superior golf and social experience to members and guests of all ages, whether you are looking for a fun and challenging golf course or the perfect special event facility.
 </div>

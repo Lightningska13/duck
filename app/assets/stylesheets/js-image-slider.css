@@ -1,6 +1,10 @@
-/* http://www.menucool.com */
+/* http://www.menucool.com 
+	To make sure menu works in IE, double check float options in mainContent
+	and other divs so that the slider won't float and display incorrectly. You
+	may need to remove the float and add padding-top to fix the problem.
+*/
 
-#sliderFrame {float:center;width:880px; padding-top: 5px; margin:0 auto;} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
+#sliderFrame {float:center; width:880px; padding-top: 5px; margin:0 auto;} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
 
 #ribbon {display: none;width:111px;height:111px;position:absolute;top:-4px;left:-4px;background:url(ribbon.png) no-repeat;z-index:7;}
         
@@ -8,7 +12,7 @@
     width:880px;height:385px;/* Make it the same size as your images */
 	background:#fff url(loading.gif) no-repeat 50% 50%;
 	margin:0 auto;/*make the image slider center-aligned */
-	margin-left: 50px;
+	margin-left: 60px;
     box-shadow: 0px 2px 10px #000000;
 }
 #slider img {

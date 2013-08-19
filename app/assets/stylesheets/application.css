@@ -15,7 +15,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #345343;
-	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 	color: #271808;
 }
 a {
@@ -60,11 +60,11 @@ a {
 	float: left;
 }
 #user_session_login {
-	width: 70px;
+	width: 60px;
 	box-shadow: 0px 0px 1px 1px;
 }
 #user_session_password {
-	width: 70px;
+	width: 60px;
 	box-shadow: 0px 0px 1px 1px;
 }
 #notice {
@@ -86,10 +86,32 @@ a {
 .adminNav {
 	font-size: 12px;
 }
+#dashContent {
+	padding-top: 200px;
+	width: 825px;
+	padding-right: 10px;
+}
 #mainContent {
 	float: left;
 	width: 825px;
 	padding-right: 10px;
+}
+#mainContent2 {
+	float: left;
+	width: 775px;
+	padding-right: 10px;
+	margin-top: 25px;
+}
+#mainContent2 h1 {
+	color: #002157;
+	font-size: x-large;
+	padding-left: 10px;
+}
+#mainContent2 p {
+	font-size: 14px;
+	padding-left: 10px;
+}
+#mainContent2 img {
 }
 #mainContent h1 {
 	color: #002157;
@@ -128,7 +150,7 @@ h2.title {
 	padding-top: 10px;
 }
 #pageNav a {
-	text-decoration: underline;
+	text-decoration: none;
 	color: #002157;
 }
 #pageNav h2 {
@@ -174,21 +196,22 @@ span.instructions {
 }
 /*Dash Page*/
 #dashLeft {
-	width: 200px;
-	background: #a89a8c;
-	float: left;
-	margin-top: 40px;
+	width:180px;
+	background:#a89a8c;
+	float:left;
+	margin-top:20px;
 }
 #dashLeft h1 {
 	color: #002157;
-	padding-left: 10px;
 	text-decoration: underline;
+	margin-top: 0px;
+	margin-left: 10px;
 }
 #dashMiddle {
-	float: left;
-	width: 600px;
-	margin-top: 30px;
-	padding-left: 15px;
+	float:left;
+	width:600px;
+	margin-top:30px;
+	padding-left:15px
 }
 .eventItem {
 	padding-left: 10px;
