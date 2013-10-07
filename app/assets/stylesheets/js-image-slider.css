@@ -8,7 +8,7 @@
 	width:880px;
 	padding-top: 5px;
 	padding-left: 60px;
-} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
+}
 
 #ribbon {
 	display: none;
@@ -23,7 +23,7 @@
 #slider {
     width:880px;
 	position:relative;
-	height:385px;/* Make it the same size as your images */
+	height:385px;
 	background:#fff url(loading.gif) no-repeat 50% 50%;
     box-shadow: 0px 2px 10px #000000;
 }
@@ -33,7 +33,6 @@
 	display:none;
 }
 
-/* the link style (if an image is wrapped in a link) */
 #slider a.imgLink {
 	z-index:2;
 	display:none;
@@ -53,8 +52,8 @@ div.mc-caption-bg, div.mc-caption-bg2 {
 	width:100%;
 	height:auto;
 	padding:0;
-	left:0px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
-	bottom:0px;/*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;*/
+	left:0px;
+	bottom:0px;
 	z-index:3;
 	overflow:hidden;
 	font-size: 0;
@@ -66,7 +65,7 @@ div.mc-caption {
 	font: bold 14px/20px Arial;
 	color:#EEE;
 	z-index:4;
-	padding:10px 0;/*Adding a padding-left or padding-right here will make the caption area wider than its background. Sometimes you may need to define its width again here to keep it the same width as its background area (div.mc-caption-bg).*/
+	padding:10px 0;
 	text-align:center;
 }
 div.mc-caption a {
@@ -80,7 +79,8 @@ div.mc-caption a:hover {
 /* ------ built-in navigation bullets wrapper ------*/
 div.navBulletsWrapper  {
 	display: none;
-	top:390px; left:350px; /* Its position is relative to the #slider */
+	top:390px;
+	left:350px;
 	width:150px;
 	background:none;
 	padding-left:20px;
@@ -100,8 +100,8 @@ div.navBulletsWrapper div {
 	overflow:hidden;
 	vertical-align:middle;
 	cursor:pointer;
-    margin-right:11px;/* distance between each bullet*/
-    _position:relative;/*IE6 hack*/
+    margin-right:11px;
+    _position:relative;
 }
 
 div.navBulletsWrapper div.active {background-position:0 -11px;}

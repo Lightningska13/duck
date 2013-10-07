@@ -79,6 +79,6 @@
 		/* fix ie6 small issue */
 		/* we should always avoid using hack like this */
 		/* should put it into separate file : ) */
-		*html #nav ul {
-			margin:0 0 0 -2px;
-		}
+		/* *html #nav ul {
+					margin:0 0 0 -2px;
+				}*/
