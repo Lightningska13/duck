@@ -6,49 +6,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <style type="text/css">
-	@media (min-width: 481px) and (max-width: 768px) {
-	#wrapper {width: 700px;}
-	#banner {background: url('/assets/bannerdlcc768.gif') no-repeat; height: 105px; width: 490px;}
-	#login {width: 210px; height: 105px;}
-	#login h1 {font-size: small;}
-	#login a {font-size: small;}
-	#login p {margin-top: 0px; font-size: x-small; margin-top: -7px;}
-	#new_user_session {font-size: x-small;}
-	#user_session_login {width: 25px;}
-	#user_session_password {width: 25px;}
-	#mainNav {width: 700px; font-size: 16px;}
-	#mainContent {width: 520px;}
-	#mainContent img {width: 545px;}
-	#mainContent2 {width: 490px;}
-	#dashLeft {width: 200px;}
-	#dashMiddle {width: 480px;}
-	#slider {width: 660px; height: 289px; background:#fff url(loading.gif) no-repeat 50% 50%; margin:0 auto; margin-left: 20px; box-shadow: 0px 2px 10px #000000;}
-	div.navBulletsWrapper  {top: 300px; left: 250px; width: 150px; background: none; margin-bottom: 10px; position: relative; cursor: pointer;}
-	#footer {width: 700px;}
-	}			
-	@media (max-width: 320px) {
-	#wrapper {width: 300px;}
-	#banner {background: url('/assets/bannerdlcc320.gif') no-repeat; height: 64px; width: 300px;}
-	#login {display: none;}
-	#mainNav {margin:auto; width: 300px; height: 120px; font-size: 12px;}
-	#mainNav a {width: 300px;}
-	#mainContent {width: 300px;}
-	#mainContent2 {width: 300px;}
-	#mainContent2 h1 {font-size: medium;}
-	#dashLeft {width: 300px;}
-	#dashLeft h1 {font-size: 16px; padding-top: 5px;}
-	#slider {width: 300px; height: 132px; background: url('/assets/ducklake320.gif') no-repeat 50% 50%; margin:0 auto; margin-left: 0px; box-shadow: 0px 2px 10px #000000;}
-	div.navBulletsWrapper  {display: none;}
-	#dashMiddle {width: 180px;}
-	#footer {width: 300px;}
-	}
-  </style>
 </head>
 <body>
-	<div id="wrapper">
 	<div id="banner">
-	</div>
+		<div id="logo">
+		</div>
 	<div id="login">
 		<%= link_to 'Record Score', 'http://web3.golfsoftware.net/10392/', :target => '_blank'%>
 		<%= link_to '#1 Live View', 'http://dlcc.dyndns.org:10000/view/viewer_index.shtml?id=12', :target => '_blank' %><br />
@@ -68,20 +30,22 @@
 		<% end %>
 		<% end %>
 	</div>
+	</div>
+	<div id="wrapper">
 <nav id="mainNav">
 <%= render "/layouts/main_nav" %>
 <%= render "/layouts/admin_nav" %>
 </nav>
+<%= yield %>
 <div id="leftCol">
 	<% unless @current_controller == 'dash' %>
 	<%= content_for?(:leftCol) ? yield(:leftCol) : render("/layouts/boilerplate") %>
 	<% end %>
 </div>
-<%= yield %>
 <div id="footer">
-	Duck Lake Country Club<br />
-	2827 Country Club Way, Albion MI 49224<br />
-	(517) 629-9015
+	<h1>Duck Lake Country Club</h1>
+	<p>2827 Country Club Way, Albion MI 49224</p>
+	<p>(517) 629-9015</p>
 </div>
 </div><!-- end wrapper -->
 <%= yield(:javascript) %>

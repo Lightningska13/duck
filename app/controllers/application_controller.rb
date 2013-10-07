@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :instantiate_controller_and_action_names
   before_filter :require_user, :except => [:index, :sort, :show]
+  before_filter :get_nav
   
  	
 	def instantiate_controller_and_action_names
@@ -24,6 +25,12 @@ class ApplicationController < ActionController::Base
 	def help
     Helper.instance
   end
+  
+  def get_nav
+		@member_nav = Page.membership
+		@about_nav = Page.about
+		@wedding_nav = Page.wedding
+	end
 
   class Helper
     include Singleton

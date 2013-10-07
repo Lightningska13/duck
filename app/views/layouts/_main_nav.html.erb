@@ -1,8 +1,30 @@
-<%=link_to('Home',:controller => 'dash', :action => 'index')%>  |
-<%=link_to('Membership',:controller => 'membership', :action => 'index')%>  |
-<%=link_to('Special Occasions',:controller => 'wedding', :action => 'index')%>  |
-<%=link_to('Events',:controller => 'events', :action => 'index')%>  |
-<%=link_to('Resources',:controller => 'resources', :action => 'index')%> |
-<%=link_to('About',:controller => 'about', :action => 'index')%>  |
-<%=link_to('Contact',:controller => 'contact_us', :action => 'new')%> |
-<%= link_to 'The Divot', {:action=>'index', :controller=>'resources', :category=>'1' }%>
+<ul id="nav">
+	<li><%=link_to('Home',:controller => 'dash', :action => 'index')%> </li>
+	<li><%= link_to 'Membership', membership_index_path %> 
+		<ul>
+			<% @member_nav.each do |item|%>
+			<li><%= link_to item.title, membership_path(item)%></li>
+			<% end %>
+		</ul>
+		<div class="clear"></div>
+	</li>
+	<li><%= link_to 'Special Occasions', wedding_index_path %> 
+		<ul>
+			<% @wedding_nav.each do |item|%>
+			<li><%= link_to item.title, wedding_path(item)%></li>
+			<% end %>
+		</ul>			
+		<div class="clear"></div>
+	</li>
+	<li><%= link_to 'About', about_index_path %> 
+		<ul>
+			<% @about_nav.each do |item|%>
+			<li><%= link_to item.title, about_path(item)%></li>
+			<% end %>
+		</ul>			
+		<div class="clear"></div>
+	</li>
+	<li><%=link_to('Events',:controller => 'events', :action => 'index')%> </li>
+	<li><%=link_to('Resources',:controller => 'resources', :action => 'index')%> </li>
+	<li><%=link_to('Contact',:controller => 'contact_us', :action => 'new')%> </li>
+	<li><%= link_to 'The Divot', {:action=>'index', :controller=>'resources', :category=>'1' }%>  </li>
